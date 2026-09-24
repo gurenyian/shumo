@@ -1,0 +1,7 @@
+__pycache__/
+results_allcores_adaptive/
+results_all100/
+results_opt5/
+results_refine_v3/
+results_hybrid/
+*.py[cod]
