@@ -1,0 +1,97 @@
+{
+  "case": "case_076",
+  "cores": 4,
+  "problem2_baseline_plan": "results_problem2/case_076_4cores/best_plan.json",
+  "problem2_baseline_makespan": 1536520,
+  "problem2_baseline_added_copy_bytes": 25074700,
+  "problem3_initial": {
+    "makespan": 1536520,
+    "added_copy_bytes": 25074700,
+    "partition_added_copy_bytes": 23178252,
+    "spill_added_copy_bytes": 1896448,
+    "cache_hit_rate": 0.5196220546911233,
+    "cache_hit_bytes": 11999232,
+    "cache_miss_bytes": 11092998,
+    "cache_hits": 4840,
+    "cache_misses": 4011,
+    "task_dependencies": 1786,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 523264,
+        "UB": 8192
+      },
+      "1": {
+        "L1": 523264,
+        "UB": 8192
+      },
+      "2": {
+        "L1": 523264,
+        "UB": 8192
+      },
+      "3": {
+        "L1": 522240,
+        "UB": 8192
+      }
+    }
+  },
+  "best": {
+    "makespan": 1536520,
+    "added_copy_bytes": 25074700,
+    "partition_added_copy_bytes": 23178252,
+    "spill_added_copy_bytes": 1896448,
+    "cache_hit_rate": 0.5196220546911233,
+    "cache_hit_bytes": 11999232,
+    "cache_miss_bytes": 11092998,
+    "cache_hits": 4840,
+    "cache_misses": 4011,
+    "task_dependencies": 1786,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 523264,
+        "UB": 8192
+      },
+      "1": {
+        "L1": 523264,
+        "UB": 8192
+      },
+      "2": {
+        "L1": 523264,
+        "UB": 8192
+      },
+      "3": {
+        "L1": 522240,
+        "UB": 8192
+      }
+    }
+  },
+  "l2_relative_speedup": 1.0,
+  "official_evaluator_calls": 1,
+  "search_profile": "baseline_only_large_graph",
+  "solver_runtime_seconds": 35.205099300001166,
+  "accepted_operations": {
+    "problem2_plan": 1
+  },
+  "optimistic_lower_bound": 1515411.0,
+  "gap_to_optimistic_lower_bound": 0.013929554424509258,
+  "ablation": [
+    {
+      "iteration": 0,
+      "candidate": "baseline_a_problem2_plan",
+      "operation": "problem2_plan",
+      "target_tensor": null,
+      "proxy": 5803252.689653351,
+      "predicted_ddr_bytes": 18532358,
+      "predicted_l2_hit_bytes": 3437568,
+      "predicted_evictions": 6776,
+      "official_makespan": 1536520,
+      "official_cache_hit_rate": 0.5196220546911233,
+      "added_copy_bytes": 25074700,
+      "status": "valid",
+      "seconds": 28.63113290000183,
+      "message": null,
+      "accepted": true
+    }
+  ],
+  "best_plan_path": "results_problem3/case_076_4cores/best_plan.json",
+  "best_result_path": "results_problem3/case_076_4cores/best_result.json.gz"
+}

@@ -1,0 +1,19 @@
+[
+  {
+    "iteration": 0,
+    "candidate": "baseline_a_problem2_plan",
+    "operation": "problem2_plan",
+    "target_tensor": null,
+    "proxy": 75839772.13758036,
+    "predicted_ddr_bytes": 396878,
+    "predicted_l2_hit_bytes": 0,
+    "predicted_evictions": 0,
+    "official_makespan": 169571,
+    "official_cache_hit_rate": 0.0,
+    "added_copy_bytes": 0,
+    "status": "valid",
+    "seconds": 2.1348200000065845,
+    "message": null,
+    "accepted": true
+  }
+]

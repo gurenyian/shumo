@@ -1,0 +1,72 @@
+{
+  "case": "case_017",
+  "cores": 1,
+  "problem2_baseline_plan": null,
+  "problem2_baseline_makespan": 162810,
+  "problem2_baseline_added_copy_bytes": 22528,
+  "problem3_initial": {
+    "makespan": 162810,
+    "added_copy_bytes": 22528,
+    "partition_added_copy_bytes": 0,
+    "spill_added_copy_bytes": 22528,
+    "cache_hit_rate": 0.040398388942088706,
+    "cache_hit_bytes": 22528,
+    "cache_miss_bytes": 535118,
+    "cache_hits": 11,
+    "cache_misses": 257,
+    "task_dependencies": 0,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 95232,
+        "UB": 129072
+      }
+    }
+  },
+  "best": {
+    "makespan": 162810,
+    "added_copy_bytes": 22528,
+    "partition_added_copy_bytes": 0,
+    "spill_added_copy_bytes": 22528,
+    "cache_hit_rate": 0.040398388942088706,
+    "cache_hit_bytes": 22528,
+    "cache_miss_bytes": 535118,
+    "cache_hits": 11,
+    "cache_misses": 257,
+    "task_dependencies": 0,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 95232,
+        "UB": 129072
+      }
+    }
+  },
+  "l2_relative_speedup": 1.0,
+  "official_evaluator_calls": 1,
+  "solver_runtime_seconds": 1.9882215999969048,
+  "accepted_operations": {
+    "problem2_plan": 1
+  },
+  "optimistic_lower_bound": 110600.0,
+  "gap_to_optimistic_lower_bound": 0.4720614828209765,
+  "ablation": [
+    {
+      "iteration": 0,
+      "candidate": "baseline_a_problem2_plan",
+      "operation": "problem2_plan",
+      "target_tensor": null,
+      "proxy": 13040982.650316766,
+      "predicted_ddr_bytes": 535118,
+      "predicted_l2_hit_bytes": 0,
+      "predicted_evictions": 0,
+      "official_makespan": 162810,
+      "official_cache_hit_rate": 0.040398388942088706,
+      "added_copy_bytes": 22528,
+      "status": "valid",
+      "seconds": 0.8305854999998701,
+      "message": null,
+      "accepted": true
+    }
+  ],
+  "best_plan_path": "results_problem3/case_017_1cores/best_plan.json",
+  "best_result_path": "results_problem3/case_017_1cores/best_result.json.gz"
+}

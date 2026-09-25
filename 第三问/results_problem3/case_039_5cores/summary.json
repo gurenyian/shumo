@@ -1,0 +1,156 @@
+{
+  "case": "case_039",
+  "cores": 5,
+  "problem2_baseline_plan": "results_problem2/case_039_5cores/best_plan.json",
+  "problem2_baseline_makespan": 301586,
+  "problem2_baseline_added_copy_bytes": 11583488,
+  "problem3_initial": {
+    "makespan": 279353,
+    "added_copy_bytes": 11583488,
+    "partition_added_copy_bytes": 11583488,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.5594087549744173,
+    "cache_hit_bytes": 8060928,
+    "cache_miss_bytes": 6348800,
+    "cache_hits": 1214,
+    "cache_misses": 1080,
+    "task_dependencies": 336,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 212992,
+        "UB": 0
+      },
+      "1": {
+        "L1": 278528,
+        "UB": 0
+      },
+      "2": {
+        "L1": 352256,
+        "UB": 0
+      },
+      "3": {
+        "L1": 339968,
+        "UB": 0
+      },
+      "4": {
+        "L1": 335872,
+        "UB": 0
+      }
+    }
+  },
+  "best": {
+    "makespan": 279353,
+    "added_copy_bytes": 11583488,
+    "partition_added_copy_bytes": 11583488,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.5594087549744173,
+    "cache_hit_bytes": 8060928,
+    "cache_miss_bytes": 6348800,
+    "cache_hits": 1214,
+    "cache_misses": 1080,
+    "task_dependencies": 336,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 212992,
+        "UB": 0
+      },
+      "1": {
+        "L1": 278528,
+        "UB": 0
+      },
+      "2": {
+        "L1": 352256,
+        "UB": 0
+      },
+      "3": {
+        "L1": 339968,
+        "UB": 0
+      },
+      "4": {
+        "L1": 335872,
+        "UB": 0
+      }
+    }
+  },
+  "l2_relative_speedup": 1.0795874753448147,
+  "official_evaluator_calls": 8,
+  "search_profile": "bounded_local_search",
+  "solver_runtime_seconds": 55.737382499995874,
+  "accepted_operations": {
+    "problem2_plan": 1
+  },
+  "optimistic_lower_bound": 275576.0,
+  "gap_to_optimistic_lower_bound": 0.013705837953958255,
+  "ablation": [
+    {
+      "iteration": 0,
+      "candidate": "baseline_a_problem2_plan",
+      "operation": "problem2_plan",
+      "target_tensor": null,
+      "proxy": 417422.93276148493,
+      "predicted_ddr_bytes": 8462336,
+      "predicted_l2_hit_bytes": 5947392,
+      "predicted_evictions": 1254,
+      "official_makespan": 279353,
+      "official_cache_hit_rate": 0.5594087549744173,
+      "added_copy_bytes": 11583488,
+      "status": "valid",
+      "seconds": 3.620807800005423,
+      "message": null,
+      "accepted": true
+    },
+    {
+      "iteration": 0,
+      "candidate": "direct_affinity",
+      "operation": "direct_affinity",
+      "target_tensor": null,
+      "proxy": 457109.41189031326,
+      "predicted_ddr_bytes": 13533184,
+      "predicted_l2_hit_bytes": 5586944,
+      "predicted_evictions": 2011,
+      "official_makespan": 280313,
+      "official_cache_hit_rate": 0.5179948586118251,
+      "added_copy_bytes": 16121856,
+      "status": "valid",
+      "seconds": 3.9109685000003083,
+      "message": null,
+      "accepted": false
+    },
+    {
+      "iteration": 0,
+      "candidate": "l2_scatter_0",
+      "operation": "l2_scatter",
+      "target_tensor": 1000001279,
+      "proxy": 416942.9807405474,
+      "predicted_ddr_bytes": 8421376,
+      "predicted_l2_hit_bytes": 5988352,
+      "predicted_evictions": 1252,
+      "official_makespan": 280624,
+      "official_cache_hit_rate": 0.5025582717453099,
+      "added_copy_bytes": 11583488,
+      "status": "valid",
+      "seconds": 3.793086099998618,
+      "message": null,
+      "accepted": false
+    },
+    {
+      "iteration": 0,
+      "candidate": "adaptive_partition_l2",
+      "operation": "adaptive_partition",
+      "target_tensor": null,
+      "proxy": 457567.11710445385,
+      "predicted_ddr_bytes": 13590528,
+      "predicted_l2_hit_bytes": 5529600,
+      "predicted_evictions": 2021,
+      "official_makespan": 286918,
+      "official_cache_hit_rate": 0.4796486718080548,
+      "added_copy_bytes": 16121856,
+      "status": "valid",
+      "seconds": 4.37372840000171,
+      "message": null,
+      "accepted": false
+    }
+  ],
+  "best_plan_path": "results_problem3/case_039_5cores/best_plan.json",
+  "best_result_path": "results_problem3/case_039_5cores/best_result.json.gz"
+}
