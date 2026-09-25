@@ -6,6 +6,7 @@ result table, leaving the packaged final results untouched.
 """
 
 import argparse
+import concurrent.futures
 import csv
 import json
 from pathlib import Path
@@ -16,8 +17,8 @@ from fast_solver import GraphModel
 from hybrid_solver import official_score, signature
 
 
-SOURCE = ROOT / 'final_results' / 'final_results_100cases.csv'
-OUT = ROOT / 'results_allcores_adaptive'
+SOURCE = ROOT / 'results' / 'final' / 'final_results_100cases.csv'
+OUT = ROOT / 'results' / 'experiments' / 'results_allcores_adaptive'
 
 
 def result_key(makespan, added_bytes):
@@ -28,7 +29,7 @@ def run_one(case, cores, base_row, cfg, waits, penalties, timeout):
     folder = OUT / f'{case}_{cores}cores'
     folder.mkdir(parents=True, exist_ok=True)
     history_file = folder / 'history.json'
-    base_plan_path = ROOT / 'final_results' / base_row['plan_file']
+    base_plan_path = ROOT / 'results' / 'final' / base_row['plan_file']
     baseline_plan = _read_json(base_plan_path)
     baseline_key = result_key(base_row['makespan_cycles'], base_row['added_copy_bytes'])
 
@@ -100,6 +101,15 @@ def run_one(case, cores, base_row, cfg, waits, penalties, timeout):
     return best_score, best_key
 
 
+def run_job(job):
+    case, cores, base_row, cfg, waits, penalties, timeout = job
+    try:
+        score, key = run_one(case, cores, base_row, cfg, waits, penalties, timeout)
+        return case, cores, score, key, None
+    except Exception as error:
+        return case, cores, None, None, str(error)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--cores', nargs='+', type=int, default=[2, 3, 4, 5],
@@ -107,9 +117,11 @@ def main():
     parser.add_argument('--cases', nargs='*', help='Optional case names, e.g. case_001 case_002')
     parser.add_argument('--penalties', nargs='+', type=float, default=[1.0, 2.0])
     parser.add_argument('--timeout', type=float, default=120)
+    parser.add_argument('--workers', type=int, default=25,
+                        help='parallel case/core jobs (default: 25)')
     args = parser.parse_args()
-    if args.timeout <= 0 or any(p < 0 for p in args.penalties):
-        parser.error('timeout must be positive and penalties must be nonnegative')
+    if args.timeout <= 0 or args.workers < 1 or any(p < 0 for p in args.penalties):
+        parser.error('timeout and workers must be positive and penalties must be nonnegative')
 
     with SOURCE.open(encoding='utf-8-sig', newline='') as stream:
         original_rows = list(csv.DictReader(stream))
@@ -119,6 +131,7 @@ def main():
     waits = read_scene_a_config(str(ROOT / 'official' / 'data' / 'config.txt'))
     OUT.mkdir(exist_ok=True)
 
+    jobs = []
     for case in sorted({row['case'] for row in original_rows}):
         if selected_cases is not None and case not in selected_cases:
             continue
@@ -127,7 +140,20 @@ def main():
             if row['status'] != 'scored' or not row['plan_file']:
                 print('SKIP: missing scored baseline', case, cores, flush=True)
                 continue
-            run_one(case, cores, row, cfg, waits, args.penalties, args.timeout)
+            jobs.append((case, cores, row, cfg, waits, args.penalties, args.timeout))
+
+    completed = 0
+    errors = []
+    with concurrent.futures.ProcessPoolExecutor(max_workers=args.workers) as pool:
+        futures = [pool.submit(run_job, job) for job in jobs]
+        for future in concurrent.futures.as_completed(futures):
+            case, cores, score, key, error = future.result()
+            completed += 1
+            if error:
+                errors.append({'case': case, 'cores': cores, 'error': error})
+                print(f'[{completed}/{len(jobs)}] ERROR {case} {cores}-core: {error}', flush=True)
+            else:
+                print(f'[{completed}/{len(jobs)}] DONE {case} {cores}-core makespan={key[0]}', flush=True)
 
     # Build an independent table, retaining the original one-core reference.
     output_rows = []
@@ -146,7 +172,7 @@ def main():
             item['makespan_cycles'] = str(score['makespan_cycles'])
             item['added_copy_bytes'] = str(score['added_copy_bytes'])
             item['method'] = score['method']
-            item['plan_file'] = str(Path('results_allcores_adaptive') /
+            item['plan_file'] = str(Path('results') / 'experiments' / 'results_allcores_adaptive' /
                                     f"{row['case']}_{cores}cores" / 'best_plan.json')
             item['result_file'] = score.get('result_file', '')
         baseline = one_core.get(row['case'])
@@ -170,6 +196,10 @@ def main():
                              'average_speedup': f'{sum(values) / len(values):.9f}'
                              if values else ''})
     print('Finished:', result_file, averages_file, flush=True)
+    if errors:
+        error_file = OUT / 'errors.json'
+        save(error_file, errors)
+        print(f'Failed jobs: {len(errors)}; details: {error_file}', flush=True)
 
 
 if __name__ == '__main__':

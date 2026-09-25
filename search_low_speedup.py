@@ -19,7 +19,7 @@ def main():
     args = parser.parse_args()
     if args.threshold <= 0 or args.seconds <= 0 or args.max_evals < 1:
         parser.error("parameters must be positive")
-    result_root = ROOT / "results_opt5"
+    result_root = ROOT / "results" / "experiments" / "results_opt5"
     with (result_root / "comparison.csv").open(encoding="utf-8-sig", newline="") as stream:
         rows = list(csv.DictReader(stream))
     selected = [row for row in rows if row["new_best_speedup"]
@@ -27,11 +27,11 @@ def main():
     print("Uniform search cases:", len(selected), flush=True)
     for row in selected:
         case = row["case"]
-        trial = ROOT / "results_generic_search" / f"{case}_5cores"
+        trial = ROOT / "results" / "experiments" / "results_generic_search" / f"{case}_5cores"
         if not (trial / "summary.json").exists():
             try:
                 run(case, 5, args.max_evals, args.seconds, 3,
-                    ROOT / "results_generic_search", min(20, args.seconds), True)
+                    ROOT / "results" / "experiments" / "results_generic_search", min(20, args.seconds), True)
             except (RuntimeError, ValueError) as error:
                 print(case, "search error", str(error)[:300], flush=True)
         if not (trial / "best_result.json").exists():

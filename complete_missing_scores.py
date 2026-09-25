@@ -100,7 +100,7 @@ def main():
                         help="Case numbers to process; default is all 100")
     parser.add_argument("--timeout", type=float, default=180)
     parser.add_argument("--max-candidates", type=int, default=3)
-    parser.add_argument("--output-root", type=Path, default=ROOT / "results_all100")
+    parser.add_argument("--output-root", type=Path, default=ROOT / "results" / "experiments" / "results_all100")
     args = parser.parse_args()
     if args.timeout <= 0 or args.max_candidates < 1:
         parser.error("timeout and max-candidates must be positive")

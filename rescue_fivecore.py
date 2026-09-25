@@ -1,7 +1,8 @@
 """Officially re-score cheap parallel alternatives for weak 5-core cases.
 
-Existing results_all100 scores are never overwritten. The script keeps the
-better official score in results_opt5/comparison.csv and checkpoints each case.
+Existing results/experiments/results_all100 scores are never overwritten. The
+script keeps the better official score in results/experiments/results_opt5/
+comparison.csv and checkpoints each case.
 Example: python rescue_fivecore.py --threshold 2 --timeout 30
 """
 
@@ -17,8 +18,8 @@ from run_problem1_all import newest_results_table
 from region_solver import region_partition
 
 
-ORIGINAL = ROOT / "results_all100"
-OUTPUT = ROOT / "results_opt5"
+ORIGINAL = ROOT / "results" / "experiments" / "results_all100"
+OUTPUT = ROOT / "results" / "experiments" / "results_opt5"
 
 
 def rows_by_case():

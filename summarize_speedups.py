@@ -1,4 +1,4 @@
-"""Summarize the official scores collected in results_all100/results.csv.
+"""Summarize scores collected in results/experiments/results_all100/results.csv.
 
 Usage: python summarize_speedups.py
 Missing scores stay empty; they are never imputed from another core count.
@@ -10,7 +10,7 @@ from pathlib import Path
 from run_problem1_all import newest_results_table
 
 
-ROOT = Path(__file__).resolve().parent / "results_all100"
+ROOT = Path(__file__).resolve().parent / "results" / "experiments" / "results_all100"
 SOURCE = newest_results_table(ROOT)
 DETAIL = ROOT / "speedup_by_case.csv"
 AVERAGES = ROOT / "speedup_averages.csv"

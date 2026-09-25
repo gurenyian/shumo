@@ -220,7 +220,7 @@ def run(case='case_002', cores=4, max_evals=8, seconds=120, starts=3,
     config = str(ROOT / 'official/data/config.txt')
     cfg, waits = read_evaluation_config(config), read_scene_a_config(config)
     gm = GraphModel(graph)
-    out = Path(output_root) / f'{case}_{cores}cores' if output_root else ROOT / 'results_hybrid' / f'{case}_{cores}cores'
+    out = Path(output_root) / f'{case}_{cores}cores' if output_root else ROOT / 'results' / 'experiments' / 'results_hybrid' / f'{case}_{cores}cores'
     scales = {1: (1.0,), 3: (1.0, .75, 1.25), 5: (1.0, .75, 1.25, .6, 1.5)}[starts]
     if max_evals == 1:
         scales = (1.0,)
@@ -472,7 +472,7 @@ if __name__ == '__main__':
     parser.add_argument('--max-evals', type=int, default=8)
     parser.add_argument('--seconds', type=float, default=120)
     parser.add_argument('--starts', type=int, choices=[1, 3, 5], default=3)
-    parser.add_argument('--output-root', help='评估结果目录；默认 results_hybrid')
+    parser.add_argument('--output-root', help='评估结果目录；默认 results/experiments/results_hybrid')
     parser.add_argument('--initial-score-timeout', type=float, default=120,
                         help='初始和第二候选的单次官方评分最长秒数，默认120')
     parser.add_argument('--fast-evaluator', action='store_true',

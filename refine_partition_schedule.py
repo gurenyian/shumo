@@ -1,7 +1,8 @@
 """Ablate fixed-partition insertion scheduling and adaptive DAG clustering.
 
-Checkpoints and candidate plans live in results_refine_v3. Accepted results are
-published into results_opt5, while every before-plan and score is preserved.
+Checkpoints and candidate plans live in results/experiments/results_refine_v3.
+Accepted results are published into results/experiments/results_opt5, while
+every before-plan and score is preserved.
 """
 
 import argparse
@@ -16,7 +17,7 @@ from hybrid_solver import groups_from_plan, official_score, signature
 from rescue_fivecore import OUTPUT, key, rows_by_case, compare_table, write_final_results, write_chart
 
 
-RUNS = ROOT / 'results_refine_v3'
+RUNS = ROOT / 'results' / 'experiments' / 'results_refine_v3'
 
 
 def diagnose(gm, plan, result):

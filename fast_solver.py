@@ -354,7 +354,7 @@ def run(case, cores, evaluate=True, evaluation_timeout=120):
     cfg, waits = read_evaluation_config(config), read_scene_a_config(config)
     plan, explanation = construct(graph, cores, cfg, waits)
     suffix = '' if evaluate else '_plan_only'
-    out = ROOT / 'results_fast' / f'{case}_{cores}cores{suffix}'
+    out = ROOT / 'results' / 'experiments' / 'results_fast' / f'{case}_{cores}cores{suffix}'
     save(out / 'plan.json', plan)
     save(out / 'explanation.json', explanation)
     summary = {k: explanation.get(k) for k in ('selected', 'final_task_count', 'construction_seconds', 'pipe_lower_bound')}

@@ -73,14 +73,14 @@ def inventory():
                          max_layer_width=max(Counter(depth.values()).values(), default=0),
                          critical_compute_cycles=max(critical.values(), default=0),
                          total_compute_cycles=sum(pipes.values()), **dict(pipes)))
-    out = ROOT / 'results/inventory.csv'
+    out = ROOT / 'results' / 'experiments' / 'inventory.csv'
     out.parent.mkdir(exist_ok=True)
     fields = list(dict.fromkeys(k for row in rows for k in row))
     with out.open('w', newline='', encoding='utf-8-sig') as f:
         writer = csv.DictWriter(f, fieldnames=fields)
         writer.writeheader()
         writer.writerows(rows)
-    save(ROOT / 'results/inventory.json', rows)
+    save(ROOT / 'results' / 'experiments' / 'inventory.json', rows)
     print(json.dumps({'cases': len(rows), 'compute_ops_range': [min(r['compute_ops'] for r in rows), max(r['compute_ops'] for r in rows)],
                       'components_range': [min(r['components'] for r in rows), max(r['components'] for r in rows)]}))
 
@@ -165,7 +165,7 @@ def solve(case, cores):
     cfg = read_evaluation_config(str(ROOT / 'official/data/config.txt'))
     waits = read_scene_a_config(str(ROOT / 'official/data/config.txt'))
     ops, pred, succ, order, depth, _, components = model(graph)
-    out = ROOT / 'results' / f'{case}_{cores}cores'
+    out = ROOT / 'results' / 'experiments' / f'{case}_{cores}cores'
     candidates = [('one_task', {'node_to_subgraph': {str(v): 0 for v in ops}, 'core_schedules': [[0]] + [[] for _ in range(cores - 1)]}),
                   ('official_random_example', generate_multicore_plan(graph, num_cores=cores, seed=0))]
     candidates.append(('components', schedule(graph, components, cores, cfg, waits)))

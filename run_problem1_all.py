@@ -162,7 +162,7 @@ def main():
                         help="每个多核配置最多官方评分次数，默认 8")
     parser.add_argument("--starts", type=int, choices=(1, 3, 5), default=3,
                         help="多核构造起点数，默认 3")
-    parser.add_argument("--output-root", type=Path, default=ROOT / "results_all100",
+    parser.add_argument("--output-root", type=Path, default=ROOT / "results" / "experiments" / "results_all100",
                         help="结果目录，默认本工程的 results_all100")
     parser.add_argument("--fast-evaluator", action="store_true",
                         help="使用经过等价性对照的事件模拟加速副本")
