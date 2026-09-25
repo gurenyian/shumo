@@ -1,0 +1,82 @@
+{
+  "case": "case_085",
+  "cores": 2,
+  "problem2_baseline_plan": "results_problem2/case_085_2cores/best_plan.json",
+  "problem2_baseline_makespan": 1577630,
+  "problem2_baseline_added_copy_bytes": 2521478,
+  "problem3_initial": {
+    "makespan": 1577629,
+    "added_copy_bytes": 2521478,
+    "partition_added_copy_bytes": 2521478,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.18145105828792915,
+    "cache_hit_bytes": 585732,
+    "cache_miss_bytes": 2642312,
+    "cache_hits": 94,
+    "cache_misses": 847,
+    "task_dependencies": 592,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 122624,
+        "UB": 52966
+      },
+      "1": {
+        "L1": 89728,
+        "UB": 54918
+      }
+    }
+  },
+  "best": {
+    "makespan": 1577629,
+    "added_copy_bytes": 2521478,
+    "partition_added_copy_bytes": 2521478,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.18145105828792915,
+    "cache_hit_bytes": 585732,
+    "cache_miss_bytes": 2642312,
+    "cache_hits": 94,
+    "cache_misses": 847,
+    "task_dependencies": 592,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 122624,
+        "UB": 52966
+      },
+      "1": {
+        "L1": 89728,
+        "UB": 54918
+      }
+    }
+  },
+  "l2_relative_speedup": 1.0000006338625875,
+  "official_evaluator_calls": 1,
+  "search_profile": "baseline_only_large_graph",
+  "solver_runtime_seconds": 22.968853799997305,
+  "accepted_operations": {
+    "problem2_plan": 1
+  },
+  "optimistic_lower_bound": 1282608.0,
+  "gap_to_optimistic_lower_bound": 0.23001649763606652,
+  "ablation": [
+    {
+      "iteration": 0,
+      "candidate": "baseline_a_problem2_plan",
+      "operation": "problem2_plan",
+      "target_tensor": null,
+      "proxy": 2008391.7822006645,
+      "predicted_ddr_bytes": 2605318,
+      "predicted_l2_hit_bytes": 622726,
+      "predicted_evictions": 475,
+      "official_makespan": 1577629,
+      "official_cache_hit_rate": 0.18145105828792915,
+      "added_copy_bytes": 2521478,
+      "status": "valid",
+      "seconds": 19.80470559999958,
+      "message": null,
+      "accepted": true
+    }
+  ],
+  "best_plan_path": "results_problem3_v1_original/case_085_2cores/best_plan.json",
+  "best_result_path": "results_problem3_v1_original/case_085_2cores/best_result.json.gz",
+  "version": "V1_ORIGINAL"
+}

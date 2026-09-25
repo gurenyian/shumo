@@ -1,4 +1,4 @@
-"""Run and summarize official Scene-B no-L2 versus read-only-L2 results."""
+"""Historical V1 batch runner; final V2 runner is optimize_problem3_v2.py."""
 
 import argparse
 import csv
@@ -210,7 +210,7 @@ def main():
     parser.add_argument('--max-evals', type=int, default=16)
     parser.add_argument('--seconds', type=float, default=300)
     parser.add_argument('--eval-timeout', type=float, default=120)
-    parser.add_argument('--output-root', type=Path, default=ROOT / 'results_problem3')
+    parser.add_argument('--output-root', type=Path, default=ROOT / 'results_problem3_v1_rerun')
     parser.add_argument('--force', action='store_true')
     parser.add_argument('--aggregate-only', action='store_true',
                         help='rebuild tables and figures from saved results without solving')

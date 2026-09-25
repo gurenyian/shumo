@@ -1,0 +1,84 @@
+{
+  "version": "V2_FINAL",
+  "case": "case_063",
+  "cores": 2,
+  "original_version": "V1_ORIGINAL",
+  "original_result_folder": "results_problem3_v1_original/case_063_2cores",
+  "selected_source": "V1_ORIGINAL_UNCHANGED",
+  "problem2_baseline_makespan": 536776,
+  "problem2_baseline_added_copy_bytes": 1167360,
+  "problem3_initial": {
+    "makespan": 536776,
+    "added_copy_bytes": 1167360,
+    "partition_added_copy_bytes": 1167360,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.0,
+    "cache_hit_bytes": 0,
+    "cache_miss_bytes": 5603328,
+    "cache_hits": 0,
+    "cache_misses": 2014,
+    "task_dependencies": 380,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 13824,
+        "UB": 58368
+      },
+      "1": {
+        "L1": 12288,
+        "UB": 61440
+      }
+    }
+  },
+  "original_v1": {
+    "makespan": 536776,
+    "added_copy_bytes": 1167360,
+    "partition_added_copy_bytes": 1167360,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.0,
+    "cache_hit_bytes": 0,
+    "cache_miss_bytes": 5603328,
+    "cache_hits": 0,
+    "cache_misses": 2014,
+    "task_dependencies": 380,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 13824,
+        "UB": 58368
+      },
+      "1": {
+        "L1": 12288,
+        "UB": 61440
+      }
+    }
+  },
+  "best": {
+    "makespan": 536776,
+    "added_copy_bytes": 1167360,
+    "partition_added_copy_bytes": 1167360,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.0,
+    "cache_hit_bytes": 0,
+    "cache_miss_bytes": 5603328,
+    "cache_hits": 0,
+    "cache_misses": 2014,
+    "task_dependencies": 380,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 13824,
+        "UB": 58368
+      },
+      "1": {
+        "L1": 12288,
+        "UB": 61440
+      }
+    }
+  },
+  "l2_relative_speedup": 1.0,
+  "v2_additional_official_evaluations": 4,
+  "search_profile": "feedback_local_search",
+  "official_evaluator_calls": 12,
+  "solver_runtime_seconds": 30.412965099996654,
+  "best_plan_path": "results_problem3_v2_final/case_063_2cores/best_plan.json",
+  "best_result_path": "results_problem3_v2_final/case_063_2cores/best_result.json.gz",
+  "problem2_baseline_plan": "results_problem2/case_063_2cores/best_plan.json"
+}

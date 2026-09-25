@@ -1,0 +1,12 @@
+[
+  {
+    "candidate": "v2_candidate_01",
+    "operation": "feedback_reorder",
+    "target_group": 1,
+    "status": "valid",
+    "makespan": 1116704,
+    "added_copy_bytes": 528708,
+    "accepted": false,
+    "seconds": 4.170525699999416
+  }
+]

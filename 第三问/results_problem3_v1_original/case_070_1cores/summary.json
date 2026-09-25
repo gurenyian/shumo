@@ -1,0 +1,74 @@
+{
+  "case": "case_070",
+  "cores": 1,
+  "problem2_baseline_plan": null,
+  "problem2_baseline_makespan": 117300,
+  "problem2_baseline_added_copy_bytes": 0,
+  "problem3_initial": {
+    "makespan": 117300,
+    "added_copy_bytes": 0,
+    "partition_added_copy_bytes": 0,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.0,
+    "cache_hit_bytes": 0,
+    "cache_miss_bytes": 419858,
+    "cache_hits": 0,
+    "cache_misses": 193,
+    "task_dependencies": 0,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 143872,
+        "UB": 22540
+      }
+    }
+  },
+  "best": {
+    "makespan": 117300,
+    "added_copy_bytes": 0,
+    "partition_added_copy_bytes": 0,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.0,
+    "cache_hit_bytes": 0,
+    "cache_miss_bytes": 419858,
+    "cache_hits": 0,
+    "cache_misses": 193,
+    "task_dependencies": 0,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 143872,
+        "UB": 22540
+      }
+    }
+  },
+  "l2_relative_speedup": 1.0,
+  "official_evaluator_calls": 1,
+  "search_profile": "bounded_local_search",
+  "solver_runtime_seconds": 1.7345698999997694,
+  "accepted_operations": {
+    "problem2_plan": 1
+  },
+  "optimistic_lower_bound": 91832.0,
+  "gap_to_optimistic_lower_bound": 0.27733252025437755,
+  "ablation": [
+    {
+      "iteration": 0,
+      "candidate": "baseline_a_problem2_plan",
+      "operation": "problem2_plan",
+      "target_tensor": null,
+      "proxy": 4442283.770548202,
+      "predicted_ddr_bytes": 419858,
+      "predicted_l2_hit_bytes": 0,
+      "predicted_evictions": 0,
+      "official_makespan": 117300,
+      "official_cache_hit_rate": 0.0,
+      "added_copy_bytes": 0,
+      "status": "valid",
+      "seconds": 0.7267798999964725,
+      "message": null,
+      "accepted": true
+    }
+  ],
+  "best_plan_path": "results_problem3_v1_original/case_070_1cores/best_plan.json",
+  "best_result_path": "results_problem3_v1_original/case_070_1cores/best_result.json.gz",
+  "version": "V1_ORIGINAL"
+}

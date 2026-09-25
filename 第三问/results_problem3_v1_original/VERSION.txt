@@ -1,0 +1,1 @@
+V1_ORIGINAL: Original 500 official scored configurations. Historical baseline; not the final optimized result.

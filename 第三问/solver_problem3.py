@@ -1,4 +1,4 @@
-"""Scene B with shared read-only L2: bounded, evaluator-guided optimization.
+"""Historical V1 Scene-B read-only-L2 solver (V2 is optimize_problem3_v2.py).
 
 All L2/FIFO estimates here rank candidates only. The unmodified official
 problem-3 evaluator alone chooses the final (makespan, added_copy_bytes).
@@ -557,7 +557,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if args.max_evals < 1 or args.seconds <= 0 or args.eval_timeout <= 0 or args.patience < 1:
         parser.error('budgets must be positive')
-    out = args.output_dir or ROOT / 'results_problem3' / f'{args.graph.stem}_{args.cores}cores'
+    out = args.output_dir or ROOT / 'results_problem3_v1_rerun' / f'{args.graph.stem}_{args.cores}cores'
     summary = solve(args.graph.resolve(), args.cores, args.config.resolve(),
                     out.resolve(), args.problem2_baseline,
                     args.max_evals, args.seconds, args.eval_timeout, args.patience)

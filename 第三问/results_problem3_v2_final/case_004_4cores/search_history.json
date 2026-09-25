@@ -1,0 +1,22 @@
+[
+  {
+    "candidate": "v2_candidate_01",
+    "operation": "feedback_move",
+    "target_group": 0,
+    "status": "valid",
+    "makespan": 197443,
+    "added_copy_bytes": 221184,
+    "accepted": false,
+    "seconds": 0.5333287000030396
+  },
+  {
+    "candidate": "v2_candidate_02",
+    "operation": "feedback_move",
+    "target_group": 0,
+    "status": "valid",
+    "makespan": 199813,
+    "added_copy_bytes": 221184,
+    "accepted": false,
+    "seconds": 0.7678921000042465
+  }
+]

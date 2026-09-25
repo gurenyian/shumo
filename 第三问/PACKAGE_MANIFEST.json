@@ -1,10 +1,11 @@
 {
   "official_cases": 100,
   "problem2_baseline_plans": 400,
-  "problem3_final_plans": 500,
-  "problem3_official_results_gzip": 500,
-  "official_result_original_bytes": 1616713041,
-  "official_result_compressed_bytes": 98823991,
-  "lossless": true,
-  "validation": "500/500 valid; see results_problem3/validation_report.json"
+  "problem3_v1_original_plans": 500,
+  "problem3_v2_final_plans": 500,
+  "problem3_official_results_gzip": 1000,
+  "final_results_directory": "results_problem3_v2_final",
+  "comparison": "results_problem3_v2_final/V1_vs_V2_comparison.csv",
+  "validated_final_rows": 500,
+  "lossless": true
 }

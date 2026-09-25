@@ -1,0 +1,84 @@
+{
+  "version": "V2_FINAL",
+  "case": "case_060",
+  "cores": 2,
+  "original_version": "V1_ORIGINAL",
+  "original_result_folder": "results_problem3_v1_original/case_060_2cores",
+  "selected_source": "V2_FEEDBACK_SEARCH",
+  "problem2_baseline_makespan": 430219,
+  "problem2_baseline_added_copy_bytes": 2281952,
+  "problem3_initial": {
+    "makespan": 430180,
+    "added_copy_bytes": 2281952,
+    "partition_added_copy_bytes": 1986992,
+    "spill_added_copy_bytes": 294960,
+    "cache_hit_rate": 0.41318111884512215,
+    "cache_hit_bytes": 1733784,
+    "cache_miss_bytes": 2462400,
+    "cache_hits": 568,
+    "cache_misses": 803,
+    "task_dependencies": 89,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 408576,
+        "UB": 122894
+      },
+      "1": {
+        "L1": 423936,
+        "UB": 122908
+      }
+    }
+  },
+  "original_v1": {
+    "makespan": 430180,
+    "added_copy_bytes": 2281952,
+    "partition_added_copy_bytes": 1986992,
+    "spill_added_copy_bytes": 294960,
+    "cache_hit_rate": 0.41318111884512215,
+    "cache_hit_bytes": 1733784,
+    "cache_miss_bytes": 2462400,
+    "cache_hits": 568,
+    "cache_misses": 803,
+    "task_dependencies": 89,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 408576,
+        "UB": 122894
+      },
+      "1": {
+        "L1": 423936,
+        "UB": 122908
+      }
+    }
+  },
+  "best": {
+    "makespan": 426342,
+    "added_copy_bytes": 2281952,
+    "partition_added_copy_bytes": 1986992,
+    "spill_added_copy_bytes": 294960,
+    "cache_hit_rate": 0.405372119049117,
+    "cache_hit_bytes": 1701016,
+    "cache_miss_bytes": 2495168,
+    "cache_hits": 564,
+    "cache_misses": 807,
+    "task_dependencies": 89,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 408576,
+        "UB": 122894
+      },
+      "1": {
+        "L1": 423936,
+        "UB": 122908
+      }
+    }
+  },
+  "l2_relative_speedup": 1.009093638440501,
+  "v2_additional_official_evaluations": 4,
+  "search_profile": "feedback_local_search",
+  "official_evaluator_calls": 12,
+  "solver_runtime_seconds": 23.525572999998985,
+  "best_plan_path": "results_problem3_v2_final/case_060_2cores/best_plan.json",
+  "best_result_path": "results_problem3_v2_final/case_060_2cores/best_result.json.gz",
+  "problem2_baseline_plan": "results_problem2/case_060_2cores/best_plan.json"
+}

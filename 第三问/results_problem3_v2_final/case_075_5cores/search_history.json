@@ -1,0 +1,32 @@
+[
+  {
+    "candidate": "v2_candidate_01",
+    "operation": "feedback_reorder",
+    "target_group": 7,
+    "status": "valid",
+    "makespan": 323542,
+    "added_copy_bytes": 5507508,
+    "accepted": false,
+    "seconds": 6.799539300001925
+  },
+  {
+    "candidate": "v2_candidate_02",
+    "operation": "feedback_move",
+    "target_group": 388,
+    "status": "valid",
+    "makespan": 330971,
+    "added_copy_bytes": 5484980,
+    "accepted": false,
+    "seconds": 5.856545599999663
+  },
+  {
+    "candidate": "v2_candidate_03",
+    "operation": "feedback_move",
+    "target_group": 188,
+    "status": "valid",
+    "makespan": 334151,
+    "added_copy_bytes": 5484980,
+    "accepted": false,
+    "seconds": 5.870557200003532
+  }
+]

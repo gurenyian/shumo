@@ -1,0 +1,166 @@
+{
+  "case": "case_080",
+  "cores": 4,
+  "problem2_baseline_plan": "results_problem2/case_080_4cores/best_plan.json",
+  "problem2_baseline_makespan": 90804,
+  "problem2_baseline_added_copy_bytes": 3362816,
+  "problem3_initial": {
+    "makespan": 74545,
+    "added_copy_bytes": 3362816,
+    "partition_added_copy_bytes": 3362816,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.4439799331103679,
+    "cache_hit_bytes": 2174976,
+    "cache_miss_bytes": 2723840,
+    "cache_hits": 363,
+    "cache_misses": 425,
+    "task_dependencies": 90,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 139264,
+        "UB": 0
+      },
+      "1": {
+        "L1": 143360,
+        "UB": 0
+      },
+      "2": {
+        "L1": 118784,
+        "UB": 0
+      },
+      "3": {
+        "L1": 131072,
+        "UB": 0
+      }
+    }
+  },
+  "best": {
+    "makespan": 74545,
+    "added_copy_bytes": 3362816,
+    "partition_added_copy_bytes": 3362816,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.4439799331103679,
+    "cache_hit_bytes": 2174976,
+    "cache_miss_bytes": 2723840,
+    "cache_hits": 363,
+    "cache_misses": 425,
+    "task_dependencies": 90,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 139264,
+        "UB": 0
+      },
+      "1": {
+        "L1": 143360,
+        "UB": 0
+      },
+      "2": {
+        "L1": 118784,
+        "UB": 0
+      },
+      "3": {
+        "L1": 131072,
+        "UB": 0
+      }
+    }
+  },
+  "l2_relative_speedup": 1.2181098665235763,
+  "official_evaluator_calls": 8,
+  "search_profile": "bounded_local_search",
+  "solver_runtime_seconds": 15.212530299999344,
+  "accepted_operations": {
+    "problem2_plan": 1
+  },
+  "optimistic_lower_bound": 72261.0,
+  "gap_to_optimistic_lower_bound": 0.031607644510870316,
+  "ablation": [
+    {
+      "iteration": 0,
+      "candidate": "baseline_a_problem2_plan",
+      "operation": "problem2_plan",
+      "target_tensor": null,
+      "proxy": 110297.98143999994,
+      "predicted_ddr_bytes": 2715648,
+      "predicted_l2_hit_bytes": 2183168,
+      "predicted_evictions": 267,
+      "official_makespan": 74545,
+      "official_cache_hit_rate": 0.4439799331103679,
+      "added_copy_bytes": 3362816,
+      "status": "valid",
+      "seconds": 1.3056842000005418,
+      "message": null,
+      "accepted": true
+    },
+    {
+      "iteration": 0,
+      "candidate": "direct_affinity",
+      "operation": "direct_affinity",
+      "target_tensor": null,
+      "proxy": 111478.77631999995,
+      "predicted_ddr_bytes": 2908160,
+      "predicted_l2_hit_bytes": 2928640,
+      "predicted_evictions": 288,
+      "official_makespan": 74736,
+      "official_cache_hit_rate": 0.5185964912280702,
+      "added_copy_bytes": 4263936,
+      "status": "valid",
+      "seconds": 1.1618511000051512,
+      "message": null,
+      "accepted": false
+    },
+    {
+      "iteration": 0,
+      "candidate": "l2_scatter_0",
+      "operation": "l2_scatter",
+      "target_tensor": 1000000185,
+      "proxy": 110066.31167999994,
+      "predicted_ddr_bytes": 2674688,
+      "predicted_l2_hit_bytes": 2203648,
+      "predicted_evictions": 259,
+      "official_makespan": 74946,
+      "official_cache_hit_rate": 0.37363560033585225,
+      "added_copy_bytes": 3334144,
+      "status": "valid",
+      "seconds": 1.3375120999990031,
+      "message": null,
+      "accepted": false
+    },
+    {
+      "iteration": 0,
+      "candidate": "l2_scatter_1",
+      "operation": "l2_scatter",
+      "target_tensor": 1000000185,
+      "proxy": 110109.23775999995,
+      "predicted_ddr_bytes": 2682880,
+      "predicted_l2_hit_bytes": 2215936,
+      "predicted_evictions": 261,
+      "official_makespan": 76282,
+      "official_cache_hit_rate": 0.34364548494983277,
+      "added_copy_bytes": 3362816,
+      "status": "valid",
+      "seconds": 1.079771199998504,
+      "message": null,
+      "accepted": false
+    },
+    {
+      "iteration": 0,
+      "candidate": "adaptive_partition_l2",
+      "operation": "adaptive_partition",
+      "target_tensor": null,
+      "proxy": 110913.52831999995,
+      "predicted_ddr_bytes": 2826240,
+      "predicted_l2_hit_bytes": 3010560,
+      "predicted_evictions": 279,
+      "official_makespan": 75787,
+      "official_cache_hit_rate": 0.38105263157894737,
+      "added_copy_bytes": 4263936,
+      "status": "valid",
+      "seconds": 1.1859835000068415,
+      "message": null,
+      "accepted": false
+    }
+  ],
+  "best_plan_path": "results_problem3_v1_original/case_080_4cores/best_plan.json",
+  "best_result_path": "results_problem3_v1_original/case_080_4cores/best_result.json.gz",
+  "version": "V1_ORIGINAL"
+}

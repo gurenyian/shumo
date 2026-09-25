@@ -1,0 +1,42 @@
+[
+  {
+    "candidate": "v2_candidate_01",
+    "operation": "feedback_reorder",
+    "target_group": 456,
+    "status": "valid",
+    "makespan": 334741,
+    "added_copy_bytes": 7473152,
+    "accepted": false,
+    "seconds": 2.9433390999984113
+  },
+  {
+    "candidate": "v2_candidate_02",
+    "operation": "feedback_reorder",
+    "target_group": 456,
+    "status": "valid",
+    "makespan": 334741,
+    "added_copy_bytes": 7473152,
+    "accepted": false,
+    "seconds": 3.5908242000004975
+  },
+  {
+    "candidate": "v2_candidate_03",
+    "operation": "feedback_reorder",
+    "target_group": 456,
+    "status": "valid",
+    "makespan": 334741,
+    "added_copy_bytes": 7473152,
+    "accepted": false,
+    "seconds": 3.2230693999954383
+  },
+  {
+    "candidate": "v2_candidate_04",
+    "operation": "feedback_reorder",
+    "target_group": 456,
+    "status": "valid",
+    "makespan": 334741,
+    "added_copy_bytes": 7473152,
+    "accepted": false,
+    "seconds": 3.163259900000412
+  }
+]

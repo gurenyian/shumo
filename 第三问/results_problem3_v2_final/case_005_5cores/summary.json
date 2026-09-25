@@ -1,0 +1,119 @@
+{
+  "version": "V2_FINAL",
+  "case": "case_005",
+  "cores": 5,
+  "original_version": "V1_ORIGINAL",
+  "original_result_folder": "results_problem3_v1_original/case_005_5cores",
+  "selected_source": "V1_ORIGINAL_UNCHANGED",
+  "problem2_baseline_makespan": 32002,
+  "problem2_baseline_added_copy_bytes": 1405080,
+  "problem3_initial": {
+    "makespan": 27941,
+    "added_copy_bytes": 1416726,
+    "partition_added_copy_bytes": 1416726,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.30985197404322595,
+    "cache_hit_bytes": 397462,
+    "cache_miss_bytes": 885286,
+    "cache_hits": 282,
+    "cache_misses": 442,
+    "task_dependencies": 488,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 28896,
+        "UB": 12932
+      },
+      "1": {
+        "L1": 27360,
+        "UB": 13700
+      },
+      "2": {
+        "L1": 27648,
+        "UB": 12388
+      },
+      "3": {
+        "L1": 27648,
+        "UB": 11716
+      },
+      "4": {
+        "L1": 21984,
+        "UB": 11620
+      }
+    }
+  },
+  "original_v1": {
+    "makespan": 27941,
+    "added_copy_bytes": 1416726,
+    "partition_added_copy_bytes": 1416726,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.30985197404322595,
+    "cache_hit_bytes": 397462,
+    "cache_miss_bytes": 885286,
+    "cache_hits": 282,
+    "cache_misses": 442,
+    "task_dependencies": 488,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 28896,
+        "UB": 12932
+      },
+      "1": {
+        "L1": 27360,
+        "UB": 13700
+      },
+      "2": {
+        "L1": 27648,
+        "UB": 12388
+      },
+      "3": {
+        "L1": 27648,
+        "UB": 11716
+      },
+      "4": {
+        "L1": 21984,
+        "UB": 11620
+      }
+    }
+  },
+  "best": {
+    "makespan": 27941,
+    "added_copy_bytes": 1416726,
+    "partition_added_copy_bytes": 1416726,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.30985197404322595,
+    "cache_hit_bytes": 397462,
+    "cache_miss_bytes": 885286,
+    "cache_hits": 282,
+    "cache_misses": 442,
+    "task_dependencies": 488,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 28896,
+        "UB": 12932
+      },
+      "1": {
+        "L1": 27360,
+        "UB": 13700
+      },
+      "2": {
+        "L1": 27648,
+        "UB": 12388
+      },
+      "3": {
+        "L1": 27648,
+        "UB": 11716
+      },
+      "4": {
+        "L1": 21984,
+        "UB": 11620
+      }
+    }
+  },
+  "l2_relative_speedup": 1.1453419705808667,
+  "v2_additional_official_evaluations": 4,
+  "official_evaluator_calls": 12,
+  "solver_runtime_seconds": 12.224180099998193,
+  "best_plan_path": "results_problem3_v2_final/case_005_5cores/best_plan.json",
+  "best_result_path": "results_problem3_v2_final/case_005_5cores/best_result.json.gz",
+  "problem2_baseline_plan": "results_problem2/case_005_5cores/best_plan.json"
+}

@@ -1,0 +1,84 @@
+{
+  "version": "V2_FINAL",
+  "case": "case_055",
+  "cores": 2,
+  "original_version": "V1_ORIGINAL",
+  "original_result_folder": "results_problem3_v1_original/case_055_2cores",
+  "selected_source": "V2_FEEDBACK_SEARCH",
+  "problem2_baseline_makespan": 53080,
+  "problem2_baseline_added_copy_bytes": 203272,
+  "problem3_initial": {
+    "makespan": 52383,
+    "added_copy_bytes": 122376,
+    "partition_added_copy_bytes": 122376,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.1078936929789766,
+    "cache_hit_bytes": 78336,
+    "cache_miss_bytes": 647712,
+    "cache_hits": 9,
+    "cache_misses": 180,
+    "task_dependencies": 7,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 75776,
+        "UB": 49168
+      },
+      "1": {
+        "L1": 76800,
+        "UB": 36870
+      }
+    }
+  },
+  "original_v1": {
+    "makespan": 52383,
+    "added_copy_bytes": 122376,
+    "partition_added_copy_bytes": 122376,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.1078936929789766,
+    "cache_hit_bytes": 78336,
+    "cache_miss_bytes": 647712,
+    "cache_hits": 9,
+    "cache_misses": 180,
+    "task_dependencies": 7,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 75776,
+        "UB": 49168
+      },
+      "1": {
+        "L1": 76800,
+        "UB": 36870
+      }
+    }
+  },
+  "best": {
+    "makespan": 51245,
+    "added_copy_bytes": 122376,
+    "partition_added_copy_bytes": 122376,
+    "spill_added_copy_bytes": 0,
+    "cache_hit_rate": 0.1078936929789766,
+    "cache_hit_bytes": 78336,
+    "cache_miss_bytes": 647712,
+    "cache_hits": 9,
+    "cache_misses": 180,
+    "task_dependencies": 7,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 75776,
+        "UB": 49168
+      },
+      "1": {
+        "L1": 95232,
+        "UB": 36870
+      }
+    }
+  },
+  "l2_relative_speedup": 1.0358083715484439,
+  "v2_additional_official_evaluations": 4,
+  "search_profile": "feedback_local_search",
+  "official_evaluator_calls": 12,
+  "solver_runtime_seconds": 5.543470899996464,
+  "best_plan_path": "results_problem3_v2_final/case_055_2cores/best_plan.json",
+  "best_result_path": "results_problem3_v2_final/case_055_2cores/best_result.json.gz",
+  "problem2_baseline_plan": "results_problem2/case_055_2cores/best_plan.json"
+}

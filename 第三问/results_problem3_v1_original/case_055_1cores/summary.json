@@ -1,0 +1,74 @@
+{
+  "case": "case_055",
+  "cores": 1,
+  "problem2_baseline_plan": null,
+  "problem2_baseline_makespan": 118835,
+  "problem2_baseline_added_copy_bytes": 69632,
+  "problem3_initial": {
+    "makespan": 118835,
+    "added_copy_bytes": 69632,
+    "partition_added_copy_bytes": 0,
+    "spill_added_copy_bytes": 69632,
+    "cache_hit_rate": 0.10014324257468461,
+    "cache_hit_bytes": 69632,
+    "cache_miss_bytes": 625692,
+    "cache_hits": 17,
+    "cache_misses": 173,
+    "task_dependencies": 0,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 68608,
+        "UB": 127006
+      }
+    }
+  },
+  "best": {
+    "makespan": 118835,
+    "added_copy_bytes": 69632,
+    "partition_added_copy_bytes": 0,
+    "spill_added_copy_bytes": 69632,
+    "cache_hit_rate": 0.10014324257468461,
+    "cache_hit_bytes": 69632,
+    "cache_miss_bytes": 625692,
+    "cache_hits": 17,
+    "cache_misses": 173,
+    "task_dependencies": 0,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 68608,
+        "UB": 127006
+      }
+    }
+  },
+  "l2_relative_speedup": 1.0,
+  "official_evaluator_calls": 1,
+  "search_profile": "bounded_local_search",
+  "solver_runtime_seconds": 1.7736650000006193,
+  "accepted_operations": {
+    "problem2_plan": 1
+  },
+  "optimistic_lower_bound": 69049.0,
+  "gap_to_optimistic_lower_bound": 0.7210242002056511,
+  "ablation": [
+    {
+      "iteration": 0,
+      "candidate": "baseline_a_problem2_plan",
+      "operation": "problem2_plan",
+      "target_tensor": null,
+      "proxy": 12656710.048729975,
+      "predicted_ddr_bytes": 625692,
+      "predicted_l2_hit_bytes": 0,
+      "predicted_evictions": 0,
+      "official_makespan": 118835,
+      "official_cache_hit_rate": 0.10014324257468461,
+      "added_copy_bytes": 69632,
+      "status": "valid",
+      "seconds": 0.7866062999964925,
+      "message": null,
+      "accepted": true
+    }
+  ],
+  "best_plan_path": "results_problem3_v1_original/case_055_1cores/best_plan.json",
+  "best_result_path": "results_problem3_v1_original/case_055_1cores/best_result.json.gz",
+  "version": "V1_ORIGINAL"
+}

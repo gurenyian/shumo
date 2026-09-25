@@ -1,0 +1,95 @@
+{
+  "version": "V2_FINAL",
+  "case": "case_042",
+  "cores": 3,
+  "original_version": "V1_ORIGINAL",
+  "original_result_folder": "results_problem3_v1_original/case_042_3cores",
+  "selected_source": "V2_FEEDBACK_SEARCH",
+  "problem2_baseline_makespan": 574145,
+  "problem2_baseline_added_copy_bytes": 8848680,
+  "problem3_initial": {
+    "makespan": 567466,
+    "added_copy_bytes": 15933108,
+    "partition_added_copy_bytes": 12403380,
+    "spill_added_copy_bytes": 3529728,
+    "cache_hit_rate": 0.40075393089393263,
+    "cache_hit_bytes": 5325094,
+    "cache_miss_bytes": 7962596,
+    "cache_hits": 1091,
+    "cache_misses": 1845,
+    "task_dependencies": 1019,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 524288,
+        "UB": 32778
+      },
+      "1": {
+        "L1": 524288,
+        "UB": 33794
+      },
+      "2": {
+        "L1": 524288,
+        "UB": 32774
+      }
+    }
+  },
+  "original_v1": {
+    "makespan": 567466,
+    "added_copy_bytes": 15933108,
+    "partition_added_copy_bytes": 12403380,
+    "spill_added_copy_bytes": 3529728,
+    "cache_hit_rate": 0.40075393089393263,
+    "cache_hit_bytes": 5325094,
+    "cache_miss_bytes": 7962596,
+    "cache_hits": 1091,
+    "cache_misses": 1845,
+    "task_dependencies": 1019,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 524288,
+        "UB": 32778
+      },
+      "1": {
+        "L1": 524288,
+        "UB": 33794
+      },
+      "2": {
+        "L1": 524288,
+        "UB": 32774
+      }
+    }
+  },
+  "best": {
+    "makespan": 564999,
+    "added_copy_bytes": 15933108,
+    "partition_added_copy_bytes": 12403380,
+    "spill_added_copy_bytes": 3529728,
+    "cache_hit_rate": 0.40075393089393263,
+    "cache_hit_bytes": 5325094,
+    "cache_miss_bytes": 7962596,
+    "cache_hits": 1091,
+    "cache_misses": 1845,
+    "task_dependencies": 1019,
+    "memory_peak_by_core": {
+      "0": {
+        "L1": 524288,
+        "UB": 32778
+      },
+      "1": {
+        "L1": 524288,
+        "UB": 33794
+      },
+      "2": {
+        "L1": 524288,
+        "UB": 32774
+      }
+    }
+  },
+  "l2_relative_speedup": 1.016187639270158,
+  "v2_additional_official_evaluations": 4,
+  "official_evaluator_calls": 12,
+  "solver_runtime_seconds": 20.710541899999953,
+  "best_plan_path": "results_problem3_v2_final/case_042_3cores/best_plan.json",
+  "best_result_path": "results_problem3_v2_final/case_042_3cores/best_result.json.gz",
+  "problem2_baseline_plan": "results_problem2/case_042_3cores/best_plan.json"
+}
