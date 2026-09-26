@@ -1,5 +1,7 @@
 # 第三问交付说明：V2 是最终结果
 
+**最终版本已于 2026-09-26 经用户确认锁定为 V2。** 本次交付不启用后续数学建模草案，也不重新搜索或替换已验证成绩。`FINAL_RELEASE.json` 记录最终代码与结果的 SHA-256 指纹，可用 `python -X utf8 verify_final_release.py` 检查文件是否被更改。
+
 **请只从 `results_problem3_v2_final` 读取第三问最终成绩和方案。**
 `results_problem3_v1_original` 是本次优化之前的原始结果，用于复核改进幅度，不能与 V2 混作同一批最终成绩。两套目录都含 100 个 case × 1～5 核，共 500 组；每组有最终切图分核方案、官方评估结果、汇总和搜索记录。
 
@@ -11,6 +13,8 @@
 | 官方评估结果 | `best_result.json`，GitHub 包内为 `.gz` | **`best_result.json.gz`** |
 | 汇总表 | `comparison_100cases.csv` | **`comparison_100cases.csv`** |
 | 版本对比 | — | **`V1_vs_V2_comparison.csv`** |
+
+`solver_problem3.py`、`run_problem3_all.py` 同时为 V2 提供官方评估接口与汇总函数，`solver_problem2.py` 提供方案验证和公共图模型；这些公共依赖必须保留，不能因为文件名含旧问题或历史搜索入口就删除。最终运行入口仍为 `optimize_problem3_v2.py`。
 
 V2 以每组 V1 方案和官方评分为保底。从 V1 官方时间线里找出最晚结束核心及其高 DDR miss 子图，尝试将这些子图在同核顺序中提前或延后，或在有明显负载余量时移到其他核。变动前先检查全局依赖图是否仍然无环；候选再交给赛题第三问官方评估器。只有官方 `(Makespan, 额外搬运字节数)` 按字典序严格改善，才会替换保底方案。因此 V2 中未改善的组明确标为 `V1_ORIGINAL_UNCHANGED`，并直接保留原方案和官方结果；改善的组标为 `V2_FEEDBACK_SEARCH`。缓存命中率是诊断指标，不是接受条件。
 

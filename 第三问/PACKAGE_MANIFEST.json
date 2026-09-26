@@ -7,5 +7,9 @@
   "final_results_directory": "results_problem3_v2_final",
   "comparison": "results_problem3_v2_final/V1_vs_V2_comparison.csv",
   "validated_final_rows": 500,
-  "lossless": true
+  "lossless": true,
+  "release": "PROBLEM3_V2_FINAL_CONFIRMED",
+  "confirmed_date": "2026-09-26",
+  "release_hash_manifest": "FINAL_RELEASE.json",
+  "final_entrypoint": "optimize_problem3_v2.py"
 }

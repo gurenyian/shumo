@@ -14,7 +14,7 @@ CODE = (
     'adaptive_clustering.py', 'experiment.py', 'fast_solver.py',
     'hybrid_solver.py', 'region_solver.py', 'solver_problem2.py',
     'solver_problem3.py', 'run_problem3_all.py', 'optimize_problem3_v2.py',
-    'validate_results.py',
+    'validate_results.py', 'verify_final_release.py',
     'test_problem3.py',
 )
 DOCUMENTS = ('README.md', '算法与结果说明.md', '最终结果与论文写法.md',
@@ -81,22 +81,9 @@ def export(destination):
     destination.mkdir(parents=True, exist_ok=True)
     for name in CODE + DOCUMENTS:
         copy_file(SOURCE / name, destination / name)
-    github_note = (
-        '\n## GitHub 压缩结果说明\n\n'
-        '为完整保留官方原始结果并控制仓库体积，本仓库的每个 '
-        '`best_result.json` 均以无损 `best_result.json.gz` 保存。'
-        '`run_problem3_all.py` 会跳过已有的压缩结果；'
-        '`validate_results.py` 可直接读取并验证，无需先解压。'
-        '若需要展开单个文件，可用 Python 标准库 `gzip`。'
-        '候选过程中的临时计划和追踪文件未纳入交付，'
-        '最终方案、官方原始结果、搜索历史和汇总统计均已保留。\n'
-    )
-    with (destination / 'README.md').open('a', encoding='utf-8') as stream:
-        stream.write(github_note)
-    paper = destination / '最终结果与论文写法.md'
-    paper.write_text(paper.read_text(encoding='utf-8').replace(
-        '`best_result.json`', '`best_result.json.gz`（无损压缩的官方原始 JSON）'),
-        encoding='utf-8')
+    if (SOURCE / 'FINAL_RELEASE.json').is_file():
+        copy_file(SOURCE / 'FINAL_RELEASE.json', destination / 'FINAL_RELEASE.json')
+    # Keep release-hashed documentation identical to the source package.
 
     for source in (SOURCE / 'official/code').glob('*.py'):
         copy_file(source, destination / 'official/code' / source.name)
@@ -171,6 +158,10 @@ def export(destination):
         compress_json(source / 'best_result.json', target / 'best_result.json.gz')
 
     manifest = {
+        'release': 'PROBLEM3_V2_FINAL_CONFIRMED',
+        'confirmed_date': '2026-09-26',
+        'final_results_directory': 'results_problem3_v2_final',
+        'release_hash_manifest': 'FINAL_RELEASE.json',
         'official_cases': 100,
         'problem2_baseline_plans': len(baseline_plans),
         'problem3_v1_original_plans': counts['results_problem3_v1_original'],
